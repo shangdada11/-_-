@@ -1,0 +1,7 @@
+<view class="songTitle">{{songTitle}}</view>
+<view class="singer">{{singer}}</view>
+<view class="songImg">
+  <image mode="widthFix" src="{{songImg}}"></image>
+  <i wx:if="{{isplay}}" bindtap="musicStop" class="iconfont icon-weibiaoti--"></i>
+  <i wx:if="{{isplay==false}}" bindtap="musicPlay" class="iconfont icon-weibiaoti--1"></i>
+</view>

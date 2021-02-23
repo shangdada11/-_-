@@ -1,0 +1,30 @@
+<!--pages/sheetSquare/index.wxml-->
+<view class="tags">
+  <scroll-view scroll-x class="tag">
+    <view class="scroll">
+      <view class="scrollBefore" style="left:{{scrollLeft + 22}}px;width:{{scrollWidth}}rpx"></view>
+      <view bindtap="goTag" data-tag="10000000" class="aTag {{tag=='10000000'?'tagActive':''}}">推荐</view>
+      <view bindtap="goTag" data-tag="165" class="aTag {{tag=='165'?'tagActive':''}}">华语</view>
+      <view bindtap="goTag" data-tag="167" class="aTag {{tag=='167'?'tagActive':''}}">英语</view>
+      <view bindtap="goTag" data-tag="166" class="aTag {{tag=='166'?'tagActive':''}}">粤语</view>
+      <view bindtap="goTag" data-tag="6" class="aTag {{tag=='6'?'tagActive':''}}">流行</view>
+      <view bindtap="goTag" data-tag="39" class="aTag {{tag=='39'?'tagActive':''}}">ACG</view>
+      <view bindtap="goTag" data-tag="136" class="aTag {{tag=='136'?'tagActive':''}}">经典</view>
+      <view bindtap="goTag" data-tag="116" class="aTag {{tag=='116'?'tagActive':''}}">治愈</view>
+    </view>
+  </scroll-view>
+</view>
+<view class="sheetSquare">
+  <view class="banner">
+    <image mode="scaleToFill" src="http://y.gtimg.cn/music/common//upload/t_musicmall_focus/3559590.jpg"></image>
+  </view>
+  <view class="sheets">
+    <view class="sheet" wx:for="{{sheets}}" wx:key="diss_id">
+      <navigator url="../songsSheet/index?diss_id={{item.diss_id}}">
+        <image lazy-load mode="widthFix" src="{{item.menu_pic}}"></image>
+        <view class="sheetTitle">{{item.diss_name}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

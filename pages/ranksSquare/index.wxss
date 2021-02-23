@@ -1,0 +1,59 @@
+/* pages/ranksSquare/index.wxss */
+page {
+  color : rgb(168, 168, 168);
+  width : 90%;
+  margin: 0 auto;
+}
+
+.rankSongs {
+  margin-top: 50rpx;
+}
+
+.rankSong {
+  display: flex;
+  height : 220rpx;
+  margin : 30rpx 0;
+}
+
+.rankSongsImg {
+  flex: 2;
+}
+
+.rankSongsName {
+  flex       : 7;
+  margin-left: 35rpx;
+}
+
+.rankSongsImg image {
+  height       : 100%;
+  border-radius: 10rpx;
+}
+
+.rankSongsName {
+  line-height: 2.6;
+  font-size  : 26rpx;
+  overflow   : hidden;
+}
+
+.rankSongsName view {
+  position: relative;
+}
+
+.rankSongsName view:nth-child(1) {
+  margin-top: 13rpx;
+}
+
+.rankSongsName text {
+  white-space: nowrap;
+}
+
+.rankSongsName view::before {
+  content         : '';
+  position        : absolute;
+  top             : 0;
+  right           : 0;
+  z-index         : 15;
+  width           : 100rpx;
+  height          : 100%;
+  background-image: linear-gradient(to right, #15161D50, #15161D 90%);
+}

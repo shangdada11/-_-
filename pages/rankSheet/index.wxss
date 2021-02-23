@@ -1,0 +1,77 @@
+/* pages/rankSheet/index.wxss */
+page {
+  color: #fff;
+}
+
+.ranksInformation {
+  text-align: center;
+}
+
+.cover {
+  width : 500rpx;
+  height: 500rpx;
+  margin: 50rpx auto !important;
+}
+
+.cover image {
+  width        : 100%;
+  height       : 100%;
+  border       : 1rpx solid #ffffff20;
+  overflow     : hidden;
+  border-radius: 15rpx;
+  box-shadow   : 0px 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ranksName {
+  color : #ffffffc0;
+  margin: 0 auto;
+}
+
+.updateTime {
+  color         : #ffffff90;
+  margin        : 30rpx auto;
+  letter-spacing: 5rpx;
+  font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size     : 24rpx;
+}
+
+.songs {
+  width     : 680rpx;
+  float     : right;
+  font-size : 34rpx;
+  margin-top: 10rpx;
+}
+
+.song {
+  margin-top   : 40rpx;
+  display      : flex;
+  height       : 75rpx;
+  border-bottom: 1rpx solid #ffffff35;
+  padding-left : 30rpx;
+  line-height  : 75rpx;
+}
+
+.name {
+  width       : 52%;
+  color       : white;
+  word-break  : keep-all;
+  overflow    : hidden;
+  white-space : nowrap;
+  margin-right: 50rpx;
+  font-size   : 26rpx;
+}
+
+.time {
+  width         : 33%;
+  color         : #878a92;
+  letter-spacing: 1rpx;
+  font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size     : 28rpx;
+}
+
+.play {
+  width: 15%;
+}
+.icon-bofang {
+  color: #919191 !important;
+}

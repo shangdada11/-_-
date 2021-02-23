@@ -1,0 +1,40 @@
+/* pages/playingMusic/index.wxss */
+page {
+  text-align: center;
+}
+
+.songTitle {
+  margin-top: 40rpx;
+  color     : #ffffffd0;
+  font-size : 42rpx;
+}
+
+.singer {
+  color     : #ffffffa0;
+  font-size : 32rpx;
+  margin-top: 10rpx;
+}
+
+.songImg {
+  margin          : 150rpx auto;
+  width           : 500rpx;
+  height          : 500rpx;
+  border-radius   : 50rpx;
+  overflow        : hidden;
+  position        : relative;
+  background-color: #919119;
+}
+
+.songImg i {
+  color      : #ffffff;
+  text-align : center;
+  line-height: 500rpx;
+  position   : absolute;
+  left       : calc(50% - 50rpx);
+  font-size  : 100rpx;
+  z-index    : 15;
+}
+
+.songImg image {
+  width: 100%;
+}

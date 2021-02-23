@@ -1,0 +1,102 @@
+<view class="indexSwiper">
+  <swiper indicator-dots circular autoplay>
+    <swiper-item wx:for="{{banner}}" wx:key='index'>
+      <image mode="heightFix" src="{{item.pic}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="top">
+  <view class="navs">
+    <navigator url="../sheetSquare/index" class="nav">
+      <view>
+        <view class="navImg"><i class="iconfont icon-gedan"></i></view>
+        <view class="navName">歌单广场</view>
+      </view>
+    </navigator>
+    <navigator url="../ranksSquare/index" class="nav">
+      <view>
+        <view class="navImg"><i class="iconfont icon-paixing"></i></view>
+        <view class="navName">排行榜</view>
+      </view>
+    </navigator>
+    <navigator url="../search/index" class="nav">
+      <view>
+        <view class="navImg"><i class="iconfont icon-sousuo"></i></view>
+        <view class="navName">搜索</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="recSongSheet">
+    <view class="title">
+      <view class="more">
+        <navigator url="../sheetSquare/index">
+          <button plain size="mini">查看更多</button>
+        </navigator>
+      </view>
+      <text class="h1">推荐歌单</text>
+    </view>
+    <view class="asd">
+      <view class="songSheets">
+        <navigator url="../songsSheet/index?diss_id={{item.disstid}}" class="songSheet" wx:for="{{recSongSheet}}"
+          wx:key="disstid" wx:if="{{index<10}}">
+          <view>
+            <view class="songSheetImg">
+              <image mode="heightFix" src="{{item.pic}}"></image>
+            </view>
+            <view class="songSheetTitle">{{item.title}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="recSongss">
+      <view class="title">
+        <text class="h1">推荐歌曲</text>
+      </view>
+      <view class="recSongs">
+        <navigator url="../playingMusic/index?song_mid={{item.song_mid}}" wx:for="{{recSongs}}" wx:key="index"
+          wx:if="{{index<3}}">
+          <view class="recSong">
+            <view class="recSongsImg">
+              <image mode="heightFix" src="{{item.album_pic}}"></image>
+            </view>
+            <view class="recSongsName">
+              <view>{{item.song_title}}</view>
+              <view>{{item.album_name}}</view>
+            </view>
+            <view class="recSongPlay">
+              <i class="iconfont icon-bofang"></i>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+    <view class="recRankSongs">
+      <view class="title">
+        <view class="more">
+          <navigator url="../ranksSquare/index">
+            <button plain size="mini">查看更多</button>
+          </navigator>
+        </view>
+        <text class="h1">排行榜</text>
+      </view>
+      <view class="rankSongs">
+        <navigator data-pic="{{item.top_pic}}" bindtap="getRankPic" url="../rankSheet/index?top_id={{item.top_id}}"
+          wx:for="{{recRankSongs}}" wx:key="top_id" wx:if="{{index<3}}">
+          <view class="rankSong">
+            <view class="rankSongsImg">
+              <image mode="heightFix" src="{{item.top_pic}}"></image>
+            </view>
+            <view class="rankSongsName">
+              <view><text>{{item.song_list[0].song_name}}</text>
+                <text class="singgeName">{{item.song_list[0].singer_name}}</text></view>
+              <view>{{item.top_title}} top1</view>
+            </view>
+            <view class="rankSongPlay">
+              <i class="iconfont icon-bofang"></i>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

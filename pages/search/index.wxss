@@ -1,0 +1,27 @@
+/* pages/search/index.wxss */
+.search {
+  width           : 90%;
+  margin          : 0 auto;
+  margin-top      : 40rpx;
+  height          : 75rpx;
+  line-height     : 75rpx;
+  background-color: #3d3d3d;
+  border-radius   : 70rpx;
+  color           : #919191;
+  font-size       : 30rpx;
+}
+
+
+.search input {
+  width : 500rpx;
+  height: 70rpx;
+  color : #fff;
+}
+
+.search i {
+  font-size   : 30rpx;
+  float       : left;
+  width       : 70rpx;
+  text-align  : right;
+  margin-right: 20rpx;
+}

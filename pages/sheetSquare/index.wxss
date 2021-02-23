@@ -1,0 +1,82 @@
+/* pages/sheetSquare/index.wxss */
+page {
+  color: #fff;
+}
+
+image {
+  width        : 100%;
+  height       : 100%;
+  border-radius: 10rpx;
+}
+
+.tags {
+  height       : 90rpx;
+  border-bottom: 1rpx solid #524646d3;
+}
+
+.tag {
+  padding-top: 10rpx;
+  margin     : 0 auto;
+  width      : 700rpx;
+  overflow   : hidden;
+  line-height: 80rpx;
+  font-size  : 26rpx;
+}
+
+.scroll {
+  overflow-x: auto;
+  width     : 150%;
+  display   : flex;
+  position  : relative;
+}
+
+.scrollBefore {
+  height          : 7rpx;
+  background-color: #4254d8;
+  border-radius   : 13rpx;
+  position        : absolute;
+  bottom          : 0;
+  transition      : all 0.4s ease-in-out;
+}
+
+.tagActive {
+  font-weight: 700;
+  color      : #4254d8;
+}
+
+.aTag {
+  flex      : 1;
+  text-align: center;
+}
+
+.aTag:hover {
+  background-color: #00000080;
+}
+
+.sheetSquare {
+  width : 700rpx;
+  margin: 0 auto;
+}
+
+.banner {
+  width           : 100%;
+  height          : 240rpx;
+  margin          : 40rpx auto;
+  background-color: #fff;
+  border-radius   : 15rpx;
+  overflow        : hidden;
+}
+
+.sheets {
+  margin               : 50rpx auto;
+  display              : grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap             : 40rpx 30rpx;
+}
+
+.sheet {
+  height     : 300rpx;
+  overflow   : hidden;
+  font-size  : 26rpx;
+  line-height: 1.5;
+}

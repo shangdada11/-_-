@@ -1,0 +1,5 @@
+<!--pages/search/index.wxml-->
+<view class="search">
+  <i class="iconfont icon-sousuo1"></i>
+  <input focus placeholder="搜索" bindconfirm="searchKey"></input>
+</view>
