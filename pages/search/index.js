@@ -1,11 +1,13 @@
 // pages/search/index.js
+const app = getApp();
+const myhost = app.globalData.myhost;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    result: '',
   },
 
   /**
@@ -15,7 +17,20 @@ Page({
 
   },
   searchKey: function (val) {
-    console.log(val.detail.value);
+    wx.request({
+      // 获取歌曲详情（歌名、作者等）
+      url: myhost + '/search',
+      data: {
+        keywords: val.detail.value
+      },
+      method: 'GET',
+      success: (res) => {
+        // console.log(res.data.result.songs)
+        this.setData({
+          result: res.data.result.songs
+        })
+      },
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

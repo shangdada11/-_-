@@ -1,26 +1,26 @@
 <!--pages/songsSheet/index.wxml-->
 <view class="top">
   <view class="topLeft">
-    <image mode="widthFix" src="{{sheet.info.diss_pic}}"></image>
+    <image mode="widthFix" src="{{sheet.coverImgUrl}}"></image>
   </view>
   <view class="topRight">
     <view class="collect">Collect</view>
     <view class="otherLike">
       <view class="follow inOther">
-        <view>{{sheet.info.diss_name}}</view>
+        <view>{{sheet.name}}</view>
       </view>
       <view class="listen inOther">
-        <view>{{sheet.info.nick_name}}</view>
+        <view>{{sheet.creator.nickname}}</view>
       </view>
     </view>
   </view>
 </view>
 <view class="songs">
-  <navigator url="../playingMusic/index?song_mid={{item.song_mid}}" wx:for="{{sheet.song_list}}" wx:key="song_id"
-    wx:if="{{index<30}}">
+  <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{sheet.tracks}}" wx:key="id"
+    wx:if="{{index<50}}">
     <view class="song">
-      <view class="name">{{item.song_name}}</view>
-      <view class="time">{{item.interval_str}}</view>
+      <view class="name">{{item.al.name}}</view>
+      <!-- <view class="time">{{item.interval_str}}</view> -->
       <view class="play"><i class="iconfont icon-bofang"></i></view>
     </view>
   </navigator>

@@ -1,4 +1,6 @@
 // pages/songsSheet/index.js
+const app = getApp();
+const myhost = app.globalData.myhost;
 Page({
   /**
    * 页面的初始数据
@@ -13,15 +15,15 @@ Page({
   onLoad: function (options) {
     wx.request({
       // 歌单列表
-      url: 'http://localhost:8080/music/api/menu_detail',
+      url: myhost + '/playlist/detail',
       data: {
-        disstid: options.diss_id
+        id: options.diss_id,
       },
       method: 'GET',
       success: (res) => {
-        console.log(res.data.data);
+        console.log(res.data);
         this.setData({
-          sheet: res.data.data
+          sheet: res.data.playlist
         })
       },
     });

@@ -3,3 +3,12 @@
   <i class="iconfont icon-sousuo1"></i>
   <input focus placeholder="搜索" bindconfirm="searchKey"></input>
 </view>
+<view class="songs">
+  <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{result}}" wx:key="song_id" wx:if="{{index<30}}">
+    <view class="song">
+      <view class="name">{{item.name}}</view>
+      <view class="time">{{item.artists[0].name}}</view>
+      <view class="play"><i class="iconfont icon-bofang"></i></view>
+    </view>
+  </navigator>
+</view>

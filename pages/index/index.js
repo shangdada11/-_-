@@ -1,3 +1,5 @@
+const app = getApp();
+const myhost = app.globalData.myhost;
 Page({
 
   /**
@@ -18,45 +20,50 @@ Page({
   onLoad: function (options) {
     // 轮播图
     wx.request({
-      url: 'http://localhost:8080/music/api/banner_h5',
+      url: myhost + '/banner',
+      data: {
+        type: 1
+      },
       method: 'GET',
       success: (res) => {
+        // console.log(res.data.banners);
         this.setData({
-          banner: res.data.data
+          banner: res.data.banners
         })
       },
     });
     wx.request({
       // 推荐歌单
-      url: 'http://localhost:8080/music/api/recommend_songlist_hot',
+      url: myhost + '/personalized',
       method: 'GET',
       success: (res) => {
+        // console.log(res.data.result);
         this.setData({
-          recSongSheet: res.data.data
+          recSongSheet: res.data.result
         })
       },
     });
     wx.request({
       // 推荐新曲
-      url: 'http://localhost:8080/music/api/recommend_new_song',
+      url: myhost + '/personalized/newsong',
       method: 'GET',
       success: (res) => {
-        // console.log(res.data.data.list);
+        // console.log(res.data.result);
         this.setData({
-          recSongs: res.data.data.list
+          recSongs: res.data.result
         })
       },
     });
-    wx.request({
-      // 排行榜
-      url: 'http://localhost:8080/music/api/top_list',
-      method: 'GET',
-      success: (res) => {
-        this.setData({
-          recRankSongs: res.data.data
-        })
-      },
-    });
+    // wx.request({
+    //   // 排行榜
+    //   url: 'http://localhost:8080/music/api/top_list',
+    //   method: 'GET',
+    //   success: (res) => {
+    //     this.setData({
+    //       recRankSongs: res.data.data
+    //     })
+    //   },
+    // });
   },
 
   getRankPic: function (val) {

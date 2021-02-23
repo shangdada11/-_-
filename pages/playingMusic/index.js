@@ -1,7 +1,7 @@
 // pages/playingMusic/index.js
-const myaudio = wx.getBackgroundAudioManager()
+const myaudio = wx.getBackgroundAudioManager();
 const app = getApp();
-const host = app.globalData.host;
+const myhost = app.globalData.myhost;
 Page({
 
   /**
@@ -9,7 +9,7 @@ Page({
    */
   data: {
     isplay: true, // 是否播放
-    song_mid: '', // 歌曲mid
+    song_mid: '', // 歌曲id
     songTitle: '', // 歌名
     singer: '', // 歌手
     songImg: '', // 歌曲封面
@@ -21,35 +21,34 @@ Page({
   onLoad: function (options) {
     wx.request({
       // 播放歌曲
-      // url: host + '/v1/qq/song',    // 备用链接
-      url: 'http://localhost:8080/music/api/song_play', // （这个链接随时会挂）
+      url: myhost + '/song/url',
       data: {
-        song_mid: options.song_mid
+        id: options.song_mid
       },
       method: 'GET',
       success: (res) => {
-        // console.log(res.data.data);
+        // console.log(res.data);
         this.setData({
-          song_mid: res.data.data.recommend_url
+          song_mid: res.data.data[0].url
         })
-
+        // console.log(this.data);
         myaudio.src = this.data.song_mid
         myaudio.play();
       },
     });
     wx.request({
       // 获取歌曲详情（歌名、作者等）
-      url: 'http://localhost:8080/music/api/song_detail',
+      url: myhost + '/search',
       data: {
-        song_mid: options.song_mid
+        keywords: options.song_mid
       },
       method: 'GET',
       success: (res) => {
-        // console.log(res.data.data.song_track)
+        // console.log(res.data.result.songs[0])
         this.setData({
-          songTitle: res.data.data.song_track.track.title,
-          singer: res.data.data.song_track.track.singers[0].name,
-          songImg: res.data.data.song_track.track.album_pic
+          songTitle: res.data.result.songs[0].name,
+          singer: res.data.result.songs[0].artists[0].name,
+          songImg: 'https://www.png8.com/imgs/2021/02/03d8aad0b1cde649.png'
         })
         myaudio.title = this.data.songTitle
         myaudio.epname = this.data.songTitle
@@ -57,15 +56,15 @@ Page({
         myaudio.coverImgUrl = this.data.songImg
       },
     });
-    myaudio.onEnded(function () {
-      console.log(myaudio);
+    myaudio.onPause(() => {
       this.setData({
         isplay: false
       })
-      myaudio.stop()
-      setTimeout(() => {
-        myaudio.play()
-      }, 1000)
+    })
+    myaudio.onPlay(() => {
+      this.setData({
+        isplay: true
+      })
     })
   },
   musicStop: function () {

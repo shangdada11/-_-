@@ -3,14 +3,14 @@
   <scroll-view scroll-x class="tag">
     <view class="scroll">
       <view class="scrollBefore" style="left:{{scrollLeft + 22}}px;width:{{scrollWidth}}rpx"></view>
-      <view bindtap="goTag" data-tag="10000000" class="aTag {{tag=='10000000'?'tagActive':''}}">推荐</view>
-      <view bindtap="goTag" data-tag="165" class="aTag {{tag=='165'?'tagActive':''}}">华语</view>
-      <view bindtap="goTag" data-tag="167" class="aTag {{tag=='167'?'tagActive':''}}">英语</view>
-      <view bindtap="goTag" data-tag="166" class="aTag {{tag=='166'?'tagActive':''}}">粤语</view>
-      <view bindtap="goTag" data-tag="6" class="aTag {{tag=='6'?'tagActive':''}}">流行</view>
-      <view bindtap="goTag" data-tag="39" class="aTag {{tag=='39'?'tagActive':''}}">ACG</view>
-      <view bindtap="goTag" data-tag="136" class="aTag {{tag=='136'?'tagActive':''}}">经典</view>
-      <view bindtap="goTag" data-tag="116" class="aTag {{tag=='116'?'tagActive':''}}">治愈</view>
+      <view bindtap="goTag" data-tag="全部" class="aTag {{tag=='全部'?'tagActive':''}}">推荐</view>
+      <view bindtap="goTag" data-tag="欧美" class="aTag {{tag=='欧美'?'tagActive':''}}">欧美</view>
+      <view bindtap="goTag" data-tag="华语" class="aTag {{tag=='华语'?'tagActive':''}}">华语</view>
+      <view bindtap="goTag" data-tag="流行" class="aTag {{tag=='流行'?'tagActive':''}}">流行</view>
+      <view bindtap="goTag" data-tag="民谣" class="aTag {{tag=='民谣'?'tagActive':''}}">民谣</view>
+      <view bindtap="goTag" data-tag="轻音乐" class="aTag {{tag=='轻音乐'?'tagActive':''}}">轻音乐</view>
+      <view bindtap="goTag" data-tag="ACG" class="aTag {{tag=='ACG'?'tagActive':''}}">ACG</view>
+      <view bindtap="goTag" data-tag="治愈" class="aTag {{tag=='治愈'?'tagActive':''}}">治愈</view>
     </view>
   </scroll-view>
 </view>
@@ -19,10 +19,10 @@
     <image mode="scaleToFill" src="http://y.gtimg.cn/music/common//upload/t_musicmall_focus/3559590.jpg"></image>
   </view>
   <view class="sheets">
-    <view class="sheet" wx:for="{{sheets}}" wx:key="diss_id">
-      <navigator url="../songsSheet/index?diss_id={{item.diss_id}}">
-        <image lazy-load mode="widthFix" src="{{item.menu_pic}}"></image>
-        <view class="sheetTitle">{{item.diss_name}}
+    <view class="sheet" wx:for="{{sheets}}" wx:key="id">
+      <navigator url="../songsSheet/index?diss_id={{item.id}}">
+        <image lazy-load mode="widthFix" src="{{item.coverImgUrl}}"></image>
+        <view class="sheetTitle">{{item.name}}
         </view>
       </navigator>
     </view>

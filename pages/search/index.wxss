@@ -25,3 +25,47 @@
   text-align  : right;
   margin-right: 20rpx;
 }
+
+.songs {
+  width     : 680rpx;
+  float     : right;
+  font-size : 34rpx;
+  margin-top: 10rpx;
+}
+
+.song {
+  margin-top   : 40rpx;
+  display      : flex;
+  height       : 75rpx;
+  border-bottom: 1rpx solid #ffffff35;
+  padding-left : 30rpx;
+  line-height  : 75rpx;
+}
+
+.name {
+  width       : 52%;
+  color       : white;
+  word-break  : keep-all;
+  overflow    : hidden;
+  white-space : nowrap;
+  margin-right: 50rpx;
+  font-size   : 26rpx;
+}
+
+.time {
+  width         : 33%;
+  color         : #878a92;
+  letter-spacing: 1rpx;
+  font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size     : 28rpx;
+  overflow      : hidden;
+  white-space   : nowrap;
+}
+
+.play {
+  width: 15%;
+}
+
+.icon-bofang {
+  color: #919191 !important;
+}

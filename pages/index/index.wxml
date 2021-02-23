@@ -1,6 +1,6 @@
 <view class="indexSwiper">
   <swiper indicator-dots circular autoplay>
-    <swiper-item wx:for="{{banner}}" wx:key='index'>
+    <swiper-item wx:for="{{banner}}" wx:key='index' wx:if="{{index<5}}">
       <image mode="heightFix" src="{{item.pic}}"></image>
     </swiper-item>
   </swiper>
@@ -37,13 +37,13 @@
     </view>
     <view class="asd">
       <view class="songSheets">
-        <navigator url="../songsSheet/index?diss_id={{item.disstid}}" class="songSheet" wx:for="{{recSongSheet}}"
-          wx:key="disstid" wx:if="{{index<10}}">
+        <navigator url="../songsSheet/index?diss_id={{item.id}}" class="songSheet" wx:for="{{recSongSheet}}" wx:key="id"
+          wx:if="{{index<12}}">
           <view>
             <view class="songSheetImg">
-              <image mode="heightFix" src="{{item.pic}}"></image>
+              <image mode="heightFix" src="{{item.picUrl}}"></image>
             </view>
-            <view class="songSheetTitle">{{item.title}}</view>
+            <view class="songSheetTitle">{{item.name}}</view>
           </view>
         </navigator>
       </view>
@@ -53,15 +53,15 @@
         <text class="h1">推荐歌曲</text>
       </view>
       <view class="recSongs">
-        <navigator url="../playingMusic/index?song_mid={{item.song_mid}}" wx:for="{{recSongs}}" wx:key="index"
+        <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{recSongs}}" wx:key="index"
           wx:if="{{index<3}}">
           <view class="recSong">
             <view class="recSongsImg">
-              <image mode="heightFix" src="{{item.album_pic}}"></image>
+              <image mode="heightFix" src="{{item.picUrl}}"></image>
             </view>
             <view class="recSongsName">
-              <view>{{item.song_title}}</view>
-              <view>{{item.album_name}}</view>
+              <view>{{item.song.name}}</view>
+              <view>{{item.song.artists[0].name}}</view>
             </view>
             <view class="recSongPlay">
               <i class="iconfont icon-bofang"></i>

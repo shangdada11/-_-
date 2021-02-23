@@ -16,19 +16,18 @@ page {
 }
 
 .songImg {
-  margin          : 150rpx auto;
-  width           : 500rpx;
-  height          : 500rpx;
-  border-radius   : 50rpx;
-  overflow        : hidden;
-  position        : relative;
-  background-color: #919119;
+  margin       : 150rpx auto;
+  width        : 750rpx;
+  height       : 750rpx;
+  border-radius: 50rpx;
+  overflow     : hidden;
+  position     : relative;
 }
 
 .songImg i {
-  color      : #ffffff;
+  color      : #ffffffa0;
   text-align : center;
-  line-height: 500rpx;
+  line-height: 750rpx;
   position   : absolute;
   left       : calc(50% - 50rpx);
   font-size  : 100rpx;

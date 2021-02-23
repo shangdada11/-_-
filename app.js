@@ -35,6 +35,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    host: "http://localhost:5000"
+    myhost: "https://autumnfish.cn/"
   }
 })

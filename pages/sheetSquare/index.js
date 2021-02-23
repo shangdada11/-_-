@@ -1,4 +1,6 @@
 // pages/sheetSquare/index.js
+const app = getApp();
+const myhost = app.globalData.myhost;
 Page({
 
   /**
@@ -7,7 +9,7 @@ Page({
   data: {
     tags: [],
     sheets: [],
-    tag: '10000000',
+    tag: '全部',
     scrollLeft: 0,
     scrollWidth: 50,
   },
@@ -18,18 +20,16 @@ Page({
   onLoad: function (options) {
     wx.request({
       // 歌单列表
-      url: 'http://localhost:8080/music/api/menu_list',
+      url: myhost + '/top/playlist/',
       data: {
-        categoryId: '10000000',
-        ein: 59,
-        sortId: 5,
+        limit: 51,
+        cat: '全部',
       },
       method: 'GET',
       success: (res) => {
-        // console.log(res.data.data);
-
+        // console.log(res.data.playlists);
         this.setData({
-          sheets: res.data.data
+          sheets: res.data.playlists
         })
       },
     });
@@ -45,6 +45,7 @@ Page({
     if (val.currentTarget.dataset.tag != this.data.tag) {
       this.setData({
         tag: val.currentTarget.dataset.tag,
+        sheets: [],
         scrollWidth: 80
       })
       setTimeout(() => {
@@ -54,15 +55,15 @@ Page({
       }, 200)
       wx.request({
         // 歌单列表
-        url: 'http://localhost:8080/music/api/menu_list',
+        url: myhost + '/top/playlist/',
         data: {
-          categoryId: val.currentTarget.dataset.tag,
-          ein: 59,
+          cat: this.data.tag,
+          limit: 51,
         },
         method: 'GET',
         success: (res) => {
           this.setData({
-            sheets: res.data.data
+            sheets: res.data.playlists
           })
         },
       });

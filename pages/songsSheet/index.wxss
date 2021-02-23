@@ -58,10 +58,13 @@
   color         : #fff;
   font-size     : 28rpx;
   letter-spacing: 3rpx;
+  height        : 140rpx;
+  overflow      : hidden;
 }
 
 .inOther:nth-child(2) view {
-  color: #919191;
+  color      : #919191;
+  white-space: nowrap;
 }
 
 .songs {
@@ -81,7 +84,7 @@
 }
 
 .name {
-  width       : 52%;
+  width       : 85%;
   color       : white;
   word-break  : keep-all;
   overflow    : hidden;
@@ -90,13 +93,13 @@
   font-size   : 26rpx;
 }
 
-.time {
+/* .time {
   width         : 33%;
   color         : #878a92;
   letter-spacing: 1rpx;
   font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
   font-size     : 28rpx;
-}
+} */
 
 .play {
   width: 15%;
