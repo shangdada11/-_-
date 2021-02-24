@@ -1,11 +1,13 @@
 // pages/ranksSquare/index.js
+const app = getApp()
+const myhost = app.globalData.myhost
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    recRankSongs: [],
+    MVs: []
   },
 
   /**
@@ -13,19 +15,19 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      // 排行榜
-      url: 'http://localhost:8080/music/api/top_list',
+      // mv
+      url: myhost + '/mv/all',
+      data: {
+        limit: 31,
+      },
       method: 'GET',
       success: (res) => {
         // console.log(res.data.data);
         this.setData({
-          recRankSongs: res.data.data
+          MVs: res.data.data
         })
       },
     });
-  },
-  getRankPic: function (val) {
-    wx.setStorageSync('rankPic', val.currentTarget.dataset.pic)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

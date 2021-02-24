@@ -1,0 +1,26 @@
+<view class="mvCover">
+  <navigator url="../mv/index?mv_id={{MVs[0].id}}">
+    <view class="mv">
+      <view class="mvImg">
+        <image mode="widthFix" src="{{MVs[0].cover}}"></image>
+        <view class="mvName1">
+          <text>
+            {{MVs[0].name}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class="mvs">
+  <navigator url="../mv/index?mv_id={{item.id}}" wx:for="{{MVs}}" wx:key="id" wx:if="{{index>0}}">
+    <view class="mv">
+      <view class="mvImg">
+        <image mode="widthFix" src="{{item.cover}}"></image>
+      </view>
+      <view class="mvName">
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  </navigator>
+</view>

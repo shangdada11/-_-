@@ -1,0 +1,71 @@
+.mvCover {
+  width     : 700rpx;
+  margin    : 0 auto;
+  margin-top: 30rpx;
+}
+
+.mvs {
+  width                : 700rpx;
+  margin               : 20rpx auto;
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows   : 1fr 1fr;
+  grid-gap             : 15rpx 15rpx;
+}
+
+.mv {
+  width        : 100%;
+  border-radius: 10rpx;
+  border       : 1rpx solid #43434d50;
+  overflow     : hidden;
+  background   : #15161D99;
+  box-shadow   : 20rpx 20rpx 60rpx #0c0d11,
+    -20rpx -20rpx 60rpx #1e1f29;
+}
+
+.mvImg {
+  width   : 100%;
+  height  : 70%;
+  margin  : 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mvImg image {
+  width : 100%;
+  height: 100%;
+}
+
+.mvName1 {
+  position        : absolute;
+  bottom          : 0;
+  left            : 0;
+  color           : #fff;
+  width           : 100%;
+  height          : 70rpx;
+  background-color: #00000080;
+}
+
+.mvName {
+  color           : #fff;
+  width           : 100%;
+  height          : 120rpx;
+  background-color: #00000080;
+  font-size       : 26rpx;
+  margin          : 0 auto;
+}
+
+
+.mvName1 text {
+  position: absolute;
+  left    : 30rpx;
+  bottom  : 20rpx;
+  color   : #e2e2e2;
+}
+
+.mvName view {
+  line-height: 1.5;
+  padding    : 10rpx 20rpx;
+  height     : 75rpx;
+  overflow   : hidden;
+}

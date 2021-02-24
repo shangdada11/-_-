@@ -1,0 +1,32 @@
+/* pages/mv/index.wxss */
+.mv {
+  width: 750rpx;
+}
+
+video {
+  width: 100%;
+}
+
+.comment {
+  width : 650rpx;
+  margin: 60rpx auto;
+}
+
+.comment image {
+  border-radius: 99rpx;
+  width        : 60rpx;
+  float        : left;
+  margin-right : 30rpx;
+}
+
+.comment_username {
+  color    : #ffffffc0;
+  font-size: 30rpx;
+}
+
+.comment_text {
+  width      : 550rpx;
+  margin     : 0 auto;
+  margin-left: 90rpx;
+  color      : #919191;
+}
