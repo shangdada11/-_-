@@ -9,9 +9,7 @@ Page({
     banner: [],
     recSongSheet: [],
     recSongs: [],
-    recRankSongs: [],
-    newMVs: [],
-    playingMusic: '0'
+    MVs: [],
   },
 
   /**
@@ -54,28 +52,22 @@ Page({
         })
       },
     });
-    // wx.request({
-    //   // 排行榜
-    //   url: 'http://localhost:8080/music/api/top_list',
-    //   method: 'GET',
-    //   success: (res) => {
-    //     this.setData({
-    //       recRankSongs: res.data.data
-    //     })
-    //   },
-    // });
+    wx.request({
+      // mv
+      url: myhost + '/mv/all',
+      data: {
+        limit: 4,
+      },
+      method: 'GET',
+      success: (res) => {
+        // console.log(res.data.data);
+        this.setData({
+          MVs: res.data.data
+        })
+      },
+    });
   },
 
-  getRankPic: function (val) {
-    wx.setStorageSync('rankPic', val.currentTarget.dataset.pic)
-  },
-
-  playMusic: function (val) {
-    // console.log(val.currentTarget.dataset.song_mid);
-    this.setData({
-      playingMusic: val.currentTarget.dataset.song_mid
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

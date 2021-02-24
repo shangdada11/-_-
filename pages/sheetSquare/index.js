@@ -12,6 +12,7 @@ Page({
     tag: '全部',
     scrollLeft: 0,
     scrollWidth: 50,
+    sheetShow: 33,
   },
 
   /**
@@ -22,7 +23,7 @@ Page({
       // 歌单列表
       url: myhost + '/top/playlist/',
       data: {
-        limit: 51,
+        limit: 66,
         cat: '全部',
       },
       method: 'GET',
@@ -109,7 +110,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      sheetShow: this.data.sheetShow + 9
+    })
   },
 
   /**

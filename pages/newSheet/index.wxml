@@ -1,0 +1,15 @@
+<!--pages/rankSheet/index.wxml-->
+<view class="ranksInformation">
+  <view class="cover">
+    <image src="{{newPicUrl}}"></image>
+  </view>
+</view>
+<view class="songs">
+  <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{sheet}}" wx:key="id" wx:if="{{index<sheetShow}}">
+    <view class="song">
+      <view class="name">{{item.name}}</view>
+      <view class="time">{{item.artists[0].name}}</view>
+      <view class="play"><i class="iconfont icon-bofang"></i></view>
+    </view>
+  </navigator>
+</view>

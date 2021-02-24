@@ -53,7 +53,8 @@
 }
 
 .time {
-  width         : 33%;
+  width         : 20%;
+  margin-right  : 10%;
   color         : #878a92;
   letter-spacing: 1rpx;
   font-family   : 'Fira Code', Consolas, 'Courier New', monospace;

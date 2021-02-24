@@ -19,7 +19,7 @@
     <image mode="scaleToFill" src="http://y.gtimg.cn/music/common//upload/t_musicmall_focus/3559590.jpg"></image>
   </view>
   <view class="sheets">
-    <view class="sheet" wx:for="{{sheets}}" wx:key="id">
+    <view class="sheet" wx:for="{{sheets}}" wx:key="id" wx:if="{{index<=sheetShow}}">
       <navigator url="../songsSheet/index?diss_id={{item.id}}">
         <image lazy-load mode="widthFix" src="{{item.coverImgUrl}}"></image>
         <view class="sheetTitle">{{item.name}}

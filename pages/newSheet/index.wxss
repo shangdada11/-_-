@@ -22,19 +22,6 @@ page {
   box-shadow   : 0px 6px 30px rgba(0, 0, 0, 0.5);
 }
 
-.ranksName {
-  color : #ffffffc0;
-  margin: 0 auto;
-}
-
-.updateTime {
-  color         : #ffffff90;
-  margin        : 30rpx auto;
-  letter-spacing: 5rpx;
-  font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
-  font-size     : 24rpx;
-}
-
 .songs {
   width     : 680rpx;
   float     : right;
@@ -62,16 +49,20 @@ page {
 }
 
 .time {
-  width         : 33%;
+  width         : 20%;
+  margin-right  : 10%;
   color         : #878a92;
   letter-spacing: 1rpx;
   font-family   : 'Fira Code', Consolas, 'Courier New', monospace;
   font-size     : 28rpx;
+  white-space   : nowrap;
+  overflow      : hidden;
 }
 
 .play {
   width: 15%;
 }
+
 .icon-bofang {
   color: #919191 !important;
 }

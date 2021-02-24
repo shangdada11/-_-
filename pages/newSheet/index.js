@@ -1,4 +1,6 @@
 // pages/rankSheet/index.js
+const app = getApp();
+const myhost = app.globalData.myhost;
 Page({
 
   /**
@@ -6,31 +8,30 @@ Page({
    */
   data: {
     sheet: [],
-    rankPicUrl: ''
+    rankPicUrl: '',
+    sheetShow: 30, // 显示数量
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      rankPicUrl: wx.getStorageSync('rankPic')
-    })
     wx.request({
-      // 排行榜详情
-      url: 'http://localhost:8080/music/api/top_detail',
+      // 新曲详情
+      url: myhost + '/top/song',
       data: {
-        top_id: options.top_id
+        type: 0
       },
       method: 'GET',
       success: (res) => {
+        // console.log(res.data.data);
         this.setData({
+          newPicUrl: res.data.data[0].album.picUrl,
           sheet: res.data.data
         })
       },
     });
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -70,7 +71,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      sheetShow: this.data.sheetShow + 10
+    })
   },
 
   /**

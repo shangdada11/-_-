@@ -173,17 +173,12 @@ image {
   line-height: 120rpx;
 }
 
-.recRankSongs,
-.newMVs {
+.recRankSongs {
   margin-top: 70rpx;
 }
 
 .recRankSongs {
   margin-bottom: 50rpx;
-}
-
-.newMVs {
-  margin-bottom: 80rpx;
 }
 
 .rankSongs {
@@ -193,17 +188,17 @@ image {
 }
 
 .mvs {
-  margin-top           : 40rpx;
+  margin               : 40rpx auto;
   display              : grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 320rpx 320rpx;
   grid-template-rows   : 1fr 1fr;
+  grid-gap             : 35rpx 35rpx;
+
 }
 
 .mv {
-  width        : 90%;
-  height       : 290rpx;
-  margin       : 20rpx auto;
-  border-radius: 20rpx;
+  width        : 100%;
+  border-radius: 15rpx;
   border       : 1rpx solid #43434d50;
   overflow     : hidden;
   background   : #15161D99;
@@ -221,9 +216,14 @@ image {
   width: 100%;
 }
 
-.mvTitle {
-  margin     : 0 20rpx;
-  margin-top : -10rpx;
-  line-height: 1.85;
+.mvName {
+  height     : 60rpx;
+  margin-top : 10rpx;
+  line-height: 40rpx;
   font-size  : 24rpx;
+  white-space: nowrap;
+  overflow   : hidden;
+  padding    : 0 20rpx;
+  color: #ffffffd0;
 }
+

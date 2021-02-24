@@ -81,8 +81,8 @@
           "scene": null
         },
         {
-          "name": "pages/rankSheet/index",
-          "pathName": "pages/rankSheet/index",
+          "name": "pages/newSheet/index",
+          "pathName": "pages/newSheet/index",
           "query": "top_id=4",
           "scene": null
         },
@@ -93,8 +93,8 @@
           "scene": null
         },
         {
-          "name": "pages/ranksSquare/index",
-          "pathName": "pages/ranksSquare/index",
+          "name": "pages/mvs/index",
+          "pathName": "pages/mvs/index",
           "query": "",
           "scene": null
         },
@@ -107,6 +107,7 @@
         {
           "name": "pages/playingMusic/index",
           "pathName": "pages/playingMusic/index",
+          "query": "",
           "scene": null
         }
       ]

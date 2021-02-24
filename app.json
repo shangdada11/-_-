@@ -3,10 +3,11 @@
     "pages/index/index",
     "pages/sheetSquare/index",
     "pages/songsSheet/index",
-    "pages/rankSheet/index",
+    "pages/newSheet/index",
     "pages/playingMusic/index",
-    "pages/ranksSquare/index",
-    "pages/search/index"
+    "pages/mvs/index",
+    "pages/search/index",
+    "pages/mv/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
