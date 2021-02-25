@@ -18,10 +18,11 @@ Page({
       url: myhost + '/playlist/detail',
       data: {
         id: options.diss_id,
+        limit: 50
       },
       method: 'GET',
       success: (res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setData({
           sheet: res.data.playlist
         })

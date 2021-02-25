@@ -19,7 +19,7 @@
   <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{sheet.tracks}}" wx:key="id"
     wx:if="{{index<50}}">
     <view class="song">
-      <view class="name">{{item.al.name}}</view>
+      <view class="name">{{item.name}}</view>
       <!-- <view class="time">{{item.interval_str}}</view> -->
       <view class="play"><i class="iconfont icon-bofang"></i></view>
     </view>
