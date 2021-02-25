@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type: '1', // 搜索类型
+    typeSelectHeight: 0, // 搜索模式选择高度
     result: '',
+    keywords: '',
   },
 
   /**
@@ -17,20 +20,46 @@ Page({
 
   },
   searchKey: function (val) {
+    if (val) {
+      this.setData({
+        keywords: val.detail.value
+      })
+    }
     wx.request({
       // 获取歌曲详情（歌名、作者等）
       url: myhost + '/search',
       data: {
-        keywords: val.detail.value
+        keywords: this.data.keywords,
+        type: this.data.type
       },
       method: 'GET',
       success: (res) => {
-        // console.log(res.data.result.songs)
+        // console.log(res.data.result)
         this.setData({
-          result: res.data.result.songs
+          result: res.data.result
         })
       },
     });
+  },
+  openSelect: function () {
+    // 打开/关闭 搜索模式选择框
+    if (this.data.typeSelectHeight != 170) {
+      this.setData({
+        typeSelectHeight: 170
+      })
+    } else {
+      this.setData({
+        typeSelectHeight: 0
+      })
+    }
+  },
+  changeType: function (val) {
+    // 改变搜索模式
+    this.setData({
+      type: val.currentTarget.dataset.type,
+      typeSelectHeight: 0
+    })
+    this.data.keywords != '' && this.searchKey()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,14 +1,54 @@
 <!--pages/search/index.wxml-->
 <view class="search">
-  <i class="iconfont icon-sousuo1"></i>
+  <view bindtap="openSelect">
+    <i wx:if="{{type=='1'}}" class="iconfont icon-danqu"></i>
+    <i wx:if="{{type=='1000'}}" class="iconfont icon-gedan"></i>
+    <i wx:if="{{type=='1004'}}" class="iconfont icon-mv"></i>
+  </view>
   <input focus placeholder="搜索" bindconfirm="searchKey"></input>
+  <view class="typeSelect" style="height:{{typeSelectHeight}}rpx">
+    <i bindtap="changeType" data-type="1" wx:if="{{type!='1'}}" class="iconfont icon-danqu"></i>
+    <i bindtap="changeType" data-type="1000" wx:if="{{type!='1000'}}" class="iconfont icon-gedan"></i>
+    <i bindtap="changeType" data-type="1004" wx:if="{{type!='1004'}}" class="iconfont icon-mv"></i>
+  </view>
 </view>
-<view class="songs">
-  <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{result}}" wx:key="song_id" wx:if="{{index<30}}">
+<view class="songs" wx:if="{{result.songs}}">
+  <navigator url="../playingMusic/index?song_mid={{item.id}}" wx:for="{{result.songs}}" wx:key="id"
+    wx:if="{{index<30}}">
     <view class="song">
       <view class="name">{{item.name}}</view>
       <view class="time">{{item.artists[0].name}}</view>
       <view class="play"><i class="iconfont icon-bofang"></i></view>
+    </view>
+  </navigator>
+</view>
+<view class="playLists" wx:if="{{result.playlists}}">
+  <navigator url="../songsSheet/index?diss_id={{item.id}}" wx:for="{{result.playlists}}" wx:key="id"
+    wx:if="{{index<30}}">
+    <view class="playList">
+      <image mode="heightFix" src="{{item.coverImgUrl}}" />
+      <view class="playListName">{{item.name}}
+      </view>
+      <view class="playListNickname">
+        <text>共{{item.trackCount}}首</text>
+        <text>by {{item.creator.nickname}}</text>
+        <text class="playCount">{{item.playCount}}次播放</text>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class="playLists" wx:if="{{result.mvs}}">
+  <navigator url="../mv/index?mv_id={{item.id}}" wx:for="{{result.mvs}}" wx:key="id" wx:if="{{index<30}}">
+    <view class="playList mv">
+      <image mode="heightFix" src="{{item.cover}}" />
+      <view class="mvText">
+        <view class="playListName">{{item.name}}
+        </view>
+        <view class="playListNickname">
+          <text>{{item.artistName}}</text>
+          <text class="playCount">{{item.playCount}}次播放</text>
+        </view>
+      </view>
     </view>
   </navigator>
 </view>

@@ -1,8 +1,10 @@
 <!--pages/mv/index.wxml-->
 <view class="mv">
-  <video controls autoplay show-mute-btn vslide-gesture enable-auto-rotation play-btn-position="center"
-    title="{{mvDetails.name}}" src="{{mvUrl}}"></video>
+  <video controls autoplay show-mute-btn enable-play-gesture vslide-gesture enable-auto-rotation
+    play-btn-position="center" title="{{mvDetails.name}}" src="{{mvUrl}}"></video>
 </view>
+<view class="aa"></view>
+<view class="mvTtile">{{mvDetails.name}}</view>
 <view class="comments">
   <view class="comment" wx:for="{{comments}}" wx:key="index" wx:if="{{index<30}}">
     <view>
