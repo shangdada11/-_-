@@ -4,9 +4,14 @@ page {
 }
 
 .songTitle {
-  margin-top: 40rpx;
-  color     : #ffffffd0;
-  font-size : 42rpx;
+  margin-top        : 40rpx;
+  color             : #ffffffd0;
+  font-size         : 42rpx;
+  overflow          : hidden;
+  display           : -webkit-box;
+  text-overflow     : ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .singer {

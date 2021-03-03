@@ -55,16 +55,24 @@
 }
 
 .inOther view {
-  color         : #fff;
-  font-size     : 28rpx;
-  letter-spacing: 3rpx;
-  height        : 140rpx;
-  overflow      : hidden;
+  color             : #fff;
+  font-size         : 28rpx;
+  letter-spacing    : 3rpx;
+  height            : 140rpx;
+  overflow          : hidden;
+  text-overflow     : ellipsis;
+  display           : -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.inOther:nth-child(1) view {
+  -webkit-line-clamp: 3;
 }
 
 .inOther:nth-child(2) view {
-  color      : #919191;
-  white-space: nowrap;
+  color             : #919191;
+  -webkit-line-clamp: 1;
+  height            : 50rpx;
 }
 
 .songs {

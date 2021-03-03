@@ -76,7 +76,14 @@ image {
 
 .sheet {
   height     : 300rpx;
-  overflow   : hidden;
   font-size  : 26rpx;
   line-height: 1.5;
+}
+
+.sheetTitle {
+  overflow          : hidden;
+  text-overflow     : ellipsis;
+  display           : -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }

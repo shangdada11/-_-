@@ -102,11 +102,15 @@ image {
 }
 
 .songSheetTitle {
-  margin-top : 10rpx;
-  height     : 60rpx;
-  font-size  : 25rpx;
-  overflow   : hidden;
-  line-height: 1.4;
+  margin-top        : 10rpx;
+  height            : 60rpx;
+  font-size         : 25rpx;
+  line-height       : 1.4;
+  overflow          : hidden;
+  display           : -webkit-box;
+  text-overflow     : ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .recSongss,
@@ -221,9 +225,14 @@ image {
   margin-top : 10rpx;
   line-height: 40rpx;
   font-size  : 24rpx;
-  white-space: nowrap;
-  overflow   : hidden;
   padding    : 0 20rpx;
-  color: #ffffffd0;
+  color      : #ffffffd0;
 }
 
+.mvName view {
+  overflow          : hidden;
+  display           : -webkit-box;
+  text-overflow     : ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

@@ -13,8 +13,8 @@
   </navigator>
 </view>
 <view class="mvs">
-  <navigator url="../mv/index?mv_id={{item.id}}" wx:for="{{MVs}}" wx:key="id" wx:if="{{index>0}}">
-    <view class="mv">
+  <navigator url="../mv/index?mv_id={{item.id}}" wx:for="{{MVs}}" wx:key="id" wx:if="{{index>0}}" class="mv">
+    <view>
       <view class="mvImg">
         <image mode="widthFix" src="{{item.cover}}"></image>
       </view>

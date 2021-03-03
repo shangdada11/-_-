@@ -16,7 +16,7 @@
 .mv {
   width        : 100%;
   border-radius: 10rpx;
-  border       : 1rpx solid #43434d50;
+  border       : 3rpx solid #43434d50;
   overflow     : hidden;
   background   : #15161D99;
   box-shadow   : 20rpx 20rpx 60rpx #0c0d11,
@@ -32,18 +32,22 @@
 }
 
 .mvImg image {
-  width : 100%;
-  height: 100%;
+  width: 100%;
 }
 
 .mvName1 {
-  position        : absolute;
-  bottom          : 0;
-  left            : 0;
-  color           : #fff;
-  width           : 100%;
-  height          : 70rpx;
-  background-color: #00000080;
+  position          : absolute;
+  bottom            : 0;
+  left              : 0;
+  color             : #fff;
+  width             : 100%;
+  height            : 70rpx;
+  background-color  : #00000080;
+  overflow          : hidden;
+  text-overflow     : ellipsis;
+  display           : -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .mvName {
@@ -52,7 +56,7 @@
   height          : 120rpx;
   background-color: #00000080;
   font-size       : 26rpx;
-  margin          : 0 auto;
+  margin-top      : -10rpx;
 }
 
 
@@ -64,8 +68,11 @@
 }
 
 .mvName view {
-  line-height: 1.5;
-  padding    : 10rpx 20rpx;
-  height     : 75rpx;
-  overflow   : hidden;
+  line-height       : 1.5;
+  padding           : 10rpx 20rpx;
+  overflow          : hidden;
+  text-overflow     : ellipsis;
+  display           : -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
